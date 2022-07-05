@@ -1,0 +1,30 @@
+<!--
+  This component uses @tailwindcss/forms
+
+  yarn add @tailwindcss/forms
+  npm install @tailwindcss/forms
+
+  plugins: [require('@tailwindcss/forms')]
+-->
+
+<header>
+    <div class="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
+  
+        <div class="flex items-center">
+            <a class="text-lg font-medium text-gray-900 px-4 active" href="/">Actuals</a>
+        </div>
+      <nav class="items-left justify-left hidden space-x-8 text-sm font-medium lg:flex lg:flex-1 lg:w-0">
+        <a id="home" class="px-4 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isHomeActive}" href="/home">Home</a>
+        <a id="tracker" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isTrackerActive}" href="/tracker">Tracker</a>
+        <a id="feeds" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isFeedsActive}" href="/feeds">Feeds</a>
+        <a id="projects" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isProjectsActive}" href="/projects">Projects</a>
+        <a id="reports" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isReportsActive}" href="/">Reports</a>
+        <a id="about" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isAboutActive}" href="/about">About</a>
+      </nav>
+  
+      <div class="items-center hidden space-x-4 lg:flex">
+        <a class="px-6 py-2 font-medium text-gray-900 bg-gray-100 rounded-lg border border-gray-900"
+          href="">Login</a>
+      </div>
+    </div>
+  </header>

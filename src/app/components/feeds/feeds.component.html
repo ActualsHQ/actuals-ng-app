@@ -1,0 +1,56 @@
+<section class="bg-gray-100">
+  <div class="p-8 bg-transparent rounded-lg lg:col-span-3">
+    <div class="mx-auto text-left lg:text-left lg:mx-0">
+      <h6 class="text-3xl font-bold sm:text-2xl">Feeds</h6>
+      <p class="mt-4 text-gray-600">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero
+        aliquid sint distinctio iure ipsum cupiditate</p><br>
+    </div>
+    <table class="shadow-2xl min-w-full text-sm border border-gray-100 bg-white">
+      <thead>
+        <tr>
+          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Date</th>
+          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Title</th>
+          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Source</th>
+          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap" (click)="sort('Category', booleanValue)">
+            <div class="flex items-center">
+              Category
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 ml-1.5 text-gray-700"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </th>
+          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Tags</th>
+        </tr>
+      </thead>
+
+      <tbody class="divide-y divide-gray-200">
+        <tr *ngFor="let p of projects">
+          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">24/05/1995</td>
+          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">Web Developer</td>
+          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">{{p.Category}}</td>
+          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">{{p.Category}}</td>
+          <td class="px-8 py-3 font-medium text-gray-900 whitespace-nowrap">
+            <strong class="bg-blue-100 text-green-700 px-6 py-1.5 rounded text-xs font-medium">
+              {{p.Category}}
+            </strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a *ngIf="showAllButton" class="inline-flex items-center px-8 py-3 mt-8 text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
+      href="/feeds">
+      <span class="text-sm font-medium"> View All</span>
+    </a>
+  </div>
+</section>
