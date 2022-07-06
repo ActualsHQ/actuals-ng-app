@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Projects, SupabaseService } from '../../services/supabase.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class FeedsComponent implements OnInit {
   booleanValue: any = false;
   @Input() showAllButton : boolean = false;
 
-  constructor(private supabase: SupabaseService) { }
+  constructor(private supabase: SupabaseService, private router: Router) { }
 
   ngOnInit(): void {
     this.getProjects();
@@ -50,5 +51,9 @@ export class FeedsComponent implements OnInit {
         this.projects.sort((a:any, b:any) => a[colName] > b[colName] ? 1 : a[colName] < b[colName] ? -1 : 0)
         this.booleanValue = !this.booleanValue
     }
+}
+
+navTo(path:string) {
+  this.router.navigateByUrl(path);
 }
 }

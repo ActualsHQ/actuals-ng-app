@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Projects, SupabaseService } from '../../services/supabase.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ProjectsComponent implements OnInit, OnChanges {
   @Input() filterList: string[] = [];
   @Input() numberOfRecords : number = 5;
 
-  constructor(private supabase: SupabaseService){
+  constructor(private supabase: SupabaseService, private router: Router){
 
   }
 
@@ -55,6 +56,10 @@ export class ProjectsComponent implements OnInit, OnChanges {
     } finally {
       this.loading = false;
     }
+  }
+
+  navTo(path:string) {
+    this.router.navigateByUrl(path);
   }
 
 }
