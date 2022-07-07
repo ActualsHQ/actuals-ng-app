@@ -1,11 +1,19 @@
 <section class="bg-gray-100">
   <div class="p-8 bg-transparent rounded-lg lg:col-span-3">
     <div class="mx-auto text-left lg:text-left lg:mx-0">
+      <a *ngIf="showAllButton" class="absolute right-8 inline-flex items-center px-8 py-3 mt-8 text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
+      (click)="navTo('/feeds')">
+      <span class="text-sm font-medium"> View All</span>
+    </a>
       <h6 class="text-3xl font-bold sm:text-2xl">Feeds</h6>
       <p class="mt-4 text-gray-600">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero
         aliquid sint distinctio iure ipsum cupiditate</p><br>
+        
     </div>
+
+   
+    <div class="overflow-x-auto">
     <table class="shadow-2xl min-w-full text-sm border border-gray-100 bg-white">
       <thead>
         <tr>
@@ -47,10 +55,6 @@
         </tr>
       </tbody>
     </table>
-
-    <a *ngIf="showAllButton" class="inline-flex items-center px-8 py-3 mt-8 text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-      (click)="navTo('/feeds')">
-      <span class="text-sm font-medium"> View All</span>
-    </a>
+  </div>
   </div>
 </section>

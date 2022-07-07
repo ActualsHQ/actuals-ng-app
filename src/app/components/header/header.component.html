@@ -14,7 +14,6 @@
             <a class="text-lg font-medium text-gray-900 px-4 active" href="/">Actuals</a>
         </div>
       <nav class="items-left justify-left hidden space-x-8 text-sm font-medium lg:flex lg:flex-1 lg:w-0">
-        <a id="home" class="px-4 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isHomeActive}" routerLink="/home" routerLinkActive="active">Home</a>
         <a id="tracker" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isTrackerActive}" routerLink="/tracker" routerLinkActive="active">Tracker</a>
         <a id="feeds" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isFeedsActive}" routerLink="/feeds" routerLinkActive="active">Feeds</a>
         <a id="projects" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isProjectsActive}" routerLink="/projects" routerLinkActive="active">Projects</a>
@@ -23,8 +22,8 @@
       </nav>
   
       <div class="items-center hidden space-x-4 lg:flex">
-        <a class="px-6 py-2 font-medium text-gray-900 bg-gray-100 rounded-lg border border-gray-900"
-          href="">Login</a>
+        <a class="px-6 py-2 font-medium text-gray-900" routerLink="/signup">Sign up</a>
+        <a class="px-6 py-2 font-medium text-gray-900 bg-gray-100 rounded-lg border border-gray-900" routerLink="/login">Sign in</a>
       </div>
     </div>
   </header>
