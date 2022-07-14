@@ -28,7 +28,7 @@ export class TrackerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-      this.sideMenuObj = {"Markets" : ['Spot', 'Futures', 'CME COTs', 'Options', 'Prices', 'Companies', 'Structural Products', 'Exchange Tokens'],
+      this.sideMenuObj = {"Markets" : ['Futures', 'CME COTs', 'Options', 'Prices', 'Companies', 'Structural Products', 'Exchange Tokens'],
                           "OnChainMetrics" : ['Bitcoin', 'Etherium', 'Solana', 'Comparison', 'Flows', 'Users']
                           }
   }

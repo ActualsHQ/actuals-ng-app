@@ -1,92 +1,43 @@
 <section class="bg-gray-100">
   <div class="max-w-screen-xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-start">
-      <div class="lg:sticky lg:top-4">
-        <details open class="overflow-hidden border border-gray-200 rounded">
-          <summary class="flex items-center justify-between px-5 py-3 bg-gray-100 lg:hidden">
-            <span class="text-sm font-medium">
-              Toggle Filters
+      <nav class="flex flex-col mt-6 space-y-1">
+        <details open class="group">
+          <summary class="flex items-center py-2 text-gray-900 rounded-lg cursor-pointer">
+            <span class="ml-3 text-lg font-medium"> Markets </span>
+            <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
             </span>
-
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
           </summary>
+          <span class="ml-3 text-sm font-medium"> Spot </span>
+          <a *ngFor="let menu of sideMenuObj.Markets" href="" class="flex items-center py-2 text-gray-900">
 
-          <form action="" class="border-t border-gray-200 lg:border-t-0">
-            <div class="flex flex-col justify-between h-screen bg-white border-r">
-              <div class="px-4 py-6">
-
-                <nav class="flex flex-col mt-6 space-y-1">
-
-                  <details open class="group">
-                    <summary
-                      class="flex items-center px-4 py-2 text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 opacity-75" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                      </svg>
-
-                      <span class="ml-3 text-sm font-medium"> Markets </span>
-
-                      <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </span>
-                    </summary>
-
-                    <nav class="mt-1.5 ml-8 flex flex-col">
-                      <a *ngFor="let menu of sideMenuObj.Markets" href=""
-                        class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700">
-
-                        <span class="ml-3 text-sm font-medium"> {{menu}} </span>
-                      </a>
-                    </nav>
-                  </details>
-
-                  <details open class="group">
-                    <summary
-                      class="flex items-center px-4 py-2 text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 opacity-75" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-
-                      <span class="ml-3 text-sm font-medium"> On-Chain Metrics </span>
-
-                      <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-                          <path fill-rule="evenodd"
-                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </span>
-                    </summary>
-
-                    <nav class="mt-1.5 ml-8 flex flex-col">
-                      <a *ngFor="let menu of sideMenuObj.OnChainMetrics" href=""
-                        class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700">
-
-                        <span class="ml-3 text-sm font-medium"> {{menu}} </span>
-                      </a>
-                    </nav>
-                  </details>
-                </nav>
-              </div>
-            </div>
-
-            <div>
-            </div>
-
-          </form>
+            <span class="ml-3 text-sm font-large"> {{menu}} </span>
+          </a>
         </details>
-      </div>
+
+        <details open class="group">
+          <summary class="flex items-center py-2 text-gray-900 rounded-lg cursor-pointer">
+            <span class="ml-3 text-lg font-medium"> On-Chain Metrics </span>
+
+            <span class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </span>
+          </summary>
+          <a *ngFor="let menu of sideMenuObj.OnChainMetrics" href="" class="flex items-center py-2 text-gray-900">
+
+            <span class="ml-3 text-sm font-large"> {{menu}} </span>
+          </a>
+        </details>
+      </nav>
 
       <div class="lg:col-span-3">
         <p class="mt-4 text-gray-600">MARKETS</p>
