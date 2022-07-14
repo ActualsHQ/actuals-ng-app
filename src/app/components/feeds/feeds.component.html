@@ -17,10 +17,10 @@
     <table class="shadow-2xl min-w-full text-sm border border-gray-100 bg-white">
       <thead>
         <tr>
-          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Date</th>
-          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Title</th>
-          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Source</th>
-          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap" (click)="sort('Category', booleanValue)">
+          <th class="px-4 py-6 font-medium text-left bg-white whitespace-nowrap">Date</th>
+          <th class="px-4 py-6 font-medium text-left bg-white whitespace-nowrap">Title</th>
+          <th class="px-4 py-6 font-medium text-left bg-white whitespace-nowrap">Source</th>
+          <th class="px-4 py-6 font-medium text-left bg-white whitespace-nowrap" (click)="sort('Category', booleanValue)">
             <div class="flex items-center">
               Category
               <svg
@@ -37,19 +37,19 @@
               </svg>
             </div>
           </th>
-          <th class="px-8 py-6 font-medium text-left bg-white whitespace-nowrap">Tags</th>
+          <th class="px-4 py-6 font-medium text-left bg-white whitespace-nowrap">Tags</th>
         </tr>
       </thead>
 
       <tbody class="divide-y divide-gray-200">
-        <tr *ngFor="let p of projects">
-          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">24/05/1995</td>
-          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">Web Developer</td>
-          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">{{p.Category}}</td>
-          <td class="px-8 py-3 text-gray-700 whitespace-nowrap">{{p.Category}}</td>
-          <td class="px-8 py-3 font-medium text-gray-900 whitespace-nowrap">
+        <tr *ngFor="let p of feeds">
+          <td class="px-4 py-3  text-gray-700 whitespace-nowrap">{{p.created_at |  date:'MM/dd/yyyy'}}</td>
+          <td class="px-4 py-3  text-gray-700 whitespace-nowrap">{{p.title}}</td>
+          <td class="px-4 py-3  text-gray-700 whitespace-nowrap">{{p.source}}</td>
+          <td class="px-4 py-3  text-gray-700 whitespace-nowrap">{{p.source}}</td>
+          <td class="px-4 py-3  font-medium text-gray-900 whitespace-nowrap">
             <strong class="bg-blue-100 text-green-700 px-6 py-1.5 rounded text-xs font-medium">
-              {{p.Category}}
+              {{p.source}}
             </strong>
           </td>
         </tr>

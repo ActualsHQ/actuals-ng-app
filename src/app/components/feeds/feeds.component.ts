@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Projects, SupabaseService } from '../../services/supabase.service';
+import { Feeds, SupabaseService } from '../../services/supabase.service';
 
 @Component({
   selector: 'app-feeds',
@@ -10,29 +10,29 @@ import { Projects, SupabaseService } from '../../services/supabase.service';
 export class FeedsComponent implements OnInit {
 
   loading = false;
-  projects: Projects | any;
+  feeds: Feeds | any;
   booleanValue: any = false;
   @Input() showAllButton : boolean = false;
 
   constructor(private supabase: SupabaseService, private router: Router) { }
 
   ngOnInit(): void {
-    this.getProjects();
+    this.getFeeds();
   }
 
-  async getProjects() {
+  async getFeeds() {
     try {
       this.loading = true;
-      let { data: projects, error, status } = await this.supabase.allProjects;
+      let { data: feeds, error, status } = await this.supabase.allFeeds;
 
       if (error && status !== 406) {
         throw error;
       }
 
-      if (projects) {
-       this.projects = projects;
+      if (feeds) {
+       this.feeds = feeds;
        if(this.showAllButton) {
-        this.projects = this.projects.slice(0, 10);
+        this.feeds = this.feeds.slice(0, 10);
        }
       }
     } catch (error) {
@@ -44,11 +44,11 @@ export class FeedsComponent implements OnInit {
 
   sort(colName: string, boolean: boolean) {
     if (boolean == true){
-        this.projects.sort((a:any, b:any) => a[colName] < b[colName] ? 1 : a[colName] > b[colName] ? -1 : 0)
+        this.feeds.sort((a:any, b:any) => a[colName] < b[colName] ? 1 : a[colName] > b[colName] ? -1 : 0)
         this.booleanValue = !this.booleanValue
     }
     else {
-        this.projects.sort((a:any, b:any) => a[colName] > b[colName] ? 1 : a[colName] < b[colName] ? -1 : 0)
+        this.feeds.sort((a:any, b:any) => a[colName] > b[colName] ? 1 : a[colName] < b[colName] ? -1 : 0)
         this.booleanValue = !this.booleanValue
     }
 }

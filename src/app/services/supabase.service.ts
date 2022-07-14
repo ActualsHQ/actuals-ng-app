@@ -14,6 +14,12 @@ export interface Projects {
   tags: string;
 }
 
+export interface Feeds {
+  date: string;
+  title: string;
+  source: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -43,6 +49,12 @@ export class SupabaseService {
   get allProjects() {
     return this.supabase
       .from('ProjectsMain')
+      .select(`*`);
+  }
+
+  get allFeeds() {
+    return this.supabase
+      .from('feed')
       .select(`*`);
   }
 
