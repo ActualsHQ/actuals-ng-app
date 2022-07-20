@@ -31,6 +31,11 @@ export class FeedsComponent implements OnInit {
 
       if (feeds) {
        this.feeds = feeds;
+
+       this.feeds.sort((a: any, b: any) => {
+        return <any>new Date(b.created_at) - <any>new Date(a.created_at);
+      });
+
        if(this.showAllButton) {
         this.feeds = this.feeds.slice(0, 10);
        }
