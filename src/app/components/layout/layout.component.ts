@@ -11,6 +11,7 @@ export class LayoutComponent implements OnInit {
   typesList : string[] = [];
   tagsList : string[] = [];
   filterList : string[] = [];
+  searchKey : string = '';
   constructor(private supabase: SupabaseService) { }
 
   ngOnInit(): void {
@@ -18,6 +19,10 @@ export class LayoutComponent implements OnInit {
     this.typesList = ['Non Fungible Token (NFT)', 'Service Provider', 'Collectors', 'Grants', 'Impact', 'Investment', 'Media', 'Product', 'Protocol', 'Service', 'Social/Community'];
     this.tagsList = ['Analytics', 'Art', 'City', 'Culture', 'DAO Tool', 'DeFi', 'Developers', 'Education', 'Events/Experiences','Future of Work'];
     //this.getFilterOptions();
+  }
+
+  searchByTitle(key:any) {
+    this.searchKey = key.target.value;
   }
 
   async getFilterOptions() {

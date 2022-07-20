@@ -64,6 +64,12 @@ export class SupabaseService {
       .select(`*`).in('Category', key);
   }
 
+  searchProjectsByTitle(key: string) {
+    return this.supabase
+      .from('ProjectsMain')
+      .select(`*`).like('Name', '%'+key+'%');
+  }
+
   get filterOptions() {
     return this.supabase
     .from('ProjectsMain')

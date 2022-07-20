@@ -4,22 +4,23 @@
     <h6 class="text-3xl font-bold sm:text-2xl">Projects</h6>
     <p class="mt-4 text-gray-600">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut vero
-      aliquid sint distinctio iure ipsum cupiditate</p><br>
+      aliquid sint distinctio iure ipsum cupiditate</p>
+
+      <div class="px-8">
+        <div class="grid grid-cols-1 gap-2 lg:grid-cols-2 py-2">
+          <p class="text-xs text-center text-gray-400 lg:text-left">
+          </p>
+  
+          <nav class="flex justify-center space-x-4">
+            
+            <input type="text" class="w-full p-2 text-sm border-gray-200 rounded-md shadow-sm"
+              placeholder="Search By Title" (keyup)="searchByTitle($event)"/>
+          </nav>
+        </div>
+      </div>
     <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:items-start">
       <div class="lg:sticky lg:top-4">
-        <details open class="overflow-hidden border border-gray-200 rounded">
-          <summary class="flex items-center justify-between px-5 py-3 bg-gray-100 lg:hidden">
-            <span class="text-sm font-medium">
-              Toggle Filters
-            </span>
-
-            <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </summary>
-
-          <form action="" class="border-t border-gray-200 lg:border-t-0">
+         <form action="" class="border-t border-gray-200 lg:border-t-0">
             <fieldset>
               <legend class="block w-full px-5 py-3 text-lg font-bold">
                 Types
@@ -27,7 +28,8 @@
 
               <div class="px-5 py-1 space-y-2">
                 <div class="flex items-center" *ngFor="let i of typesList">
-                  <input id="type-{{i}}" type="checkbox" name="type{{i}}" class="w-5 h-5 border-gray-300 rounded" (change)="applyFiler(i, $event)" />
+                  <input id="type-{{i}}" type="checkbox" name="type{{i}}" class="w-5 h-5 border-gray-300 rounded"
+                    (change)="applyFiler(i, $event)" />
 
                   <label for="type-{{i}}" class="ml-3 text-sm font-medium">
                     {{i}}
@@ -54,11 +56,10 @@
               </fieldset>
             </div>
           </form>
-        </details>
       </div>
 
       <div class="lg:col-span-3">
-        <app-projects [viewAllButton]="false" [showAllprojects]="true" [filterList]="filterList"></app-projects>
+        <app-projects [viewAllButton]="false" [showAllprojects]="true" [filterList]="filterList" [searchKey]="searchKey"></app-projects>
       </div>
     </div>
   </div>

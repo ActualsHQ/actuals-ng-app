@@ -16,6 +16,7 @@ export class ProjectsComponent implements OnInit, OnChanges {
   @Input() applyFilter: string = '';
   @Input() filterList: string[] = [];
   @Input() numberOfRecords : number = 5;
+  @Input() searchKey: string = '';
 
   constructor(private supabase: SupabaseService, private router: Router){
 
@@ -28,8 +29,21 @@ export class ProjectsComponent implements OnInit, OnChanges {
   ngOnChanges(): void {
     this.getProjects();
     console.log(this.filterList);
+    this.searchByTitle();
   }
 
+  async searchByTitle() {
+    var { data: projects, error, status } = await this.supabase.searchProjectsByTitle(this.searchKey);
+
+    if (error && status !== 406) {
+      throw error;
+    }
+
+    if (projects) {
+     console.log('Search by Title::', projects);
+     this.projects = projects;
+    }
+  }
 
   async getProjects() {
     console.log('Filter::', this.filterList);
