@@ -107,4 +107,12 @@ export class SupabaseService {
   uploadAvatar(filePath: string, file: File) {
     return this.supabase.storage.from('avatars').upload(filePath, file);
   }
-}
+
+  saveSubscribeEmail(email:string){
+    return this.supabase
+    .from('SubscribeEmails')
+    .insert([
+      { email: email }
+    ])  
+  }
+  }

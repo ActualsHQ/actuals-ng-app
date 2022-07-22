@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SupabaseService } from 'src/app/services/supabase.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  constructor() { }
+  isDone: boolean = false;
+  constructor(private sb: SupabaseService) { }
 
   ngOnInit(): void {
+  }
+
+  async saveEmail() {
+      let email = (<HTMLInputElement>document.getElementById("email")).value;
+      if(email!='') {
+        await this.sb.saveSubscribeEmail(email);
+        this.isDone = true;
+        
+        setTimeout(()=>{    
+          (<HTMLInputElement>document.getElementById("email")).value = '';
+          this.isDone = false;
+      }, 2000);
+      }
   }
 
 }
