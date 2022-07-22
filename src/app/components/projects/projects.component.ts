@@ -28,7 +28,6 @@ export class ProjectsComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     this.getProjects();
-    console.log(this.filterList);
     this.searchByTitle();
   }
 
@@ -40,13 +39,11 @@ export class ProjectsComponent implements OnInit, OnChanges {
     }
 
     if (projects) {
-     console.log('Search by Title::', projects);
      this.projects = projects;
     }
   }
 
   async getProjects() {
-    console.log('Filter::', this.filterList);
     try {
       this.loading = true;
       if(this.filterList.length == 0) 
@@ -59,7 +56,6 @@ export class ProjectsComponent implements OnInit, OnChanges {
       }
 
       if (projects) {
-       console.log('Projects::', projects);
        this.projects = projects;
        if(!this.showAllprojects) {
         this.projects = this.projects.slice(0, this.numberOfRecords);
