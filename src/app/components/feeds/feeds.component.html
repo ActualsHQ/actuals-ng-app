@@ -51,7 +51,7 @@
       <tbody class="divide-y divide-gray-200">
         <tr class="sm:table-row" *ngFor="let p of feeds">
           <td class="px-4 py-3  text-gray-700 whitespace-nowrap">{{p.created_at |  date:'MM/dd/yyyy'}}</td>
-          <td class="px-4 py-3  text-blue-700 whitespace-nowrap"><a href="{{p.link}}">{{p.title}}</a></td>
+          <td class="px-4 py-3  text-blue-700 whitespace-nowrap"><a href="{{p.link}}" target="_blank">{{p.title}}</a></td>
           <td class="px-4 py-3  text-gray-700 whitespace-nowrap">{{p.source}}</td>
           <td class="px-4 py-3  text-gray-700 whitespace-nowrap">{{p.source}}</td>
           <td class="px-4 py-3  font-medium text-gray-900 whitespace-nowrap">
