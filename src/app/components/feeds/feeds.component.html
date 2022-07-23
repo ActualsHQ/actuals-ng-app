@@ -1,12 +1,15 @@
 <section class="bg-gray-100">
-  <div class="p-8 bg-transparent rounded-lg lg:col-span-3">
-    <div class="mx-auto text-left lg:text-left lg:mx-0">
-      <a *ngIf="showAllButton" class="absolute right-8 inline-flex items-center px-8 py-3 mt-8 text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
+  <div class="sm:p-4 md:p-6 lg:p-8 bg-transparent rounded-lg lg:col-span-3">
+    <div class="feeds-sec-header flex  
+    mx-auto text-left lg:text-left  mb-2">
+      
+      <h6 class="text-3xl font-bold sm:text-2xl">Feeds</h6>
+         
+      <a *ngIf="showAllButton" class="  items-center px-8 py-3 text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
       (click)="navTo('/feeds')">
       <span class="text-sm font-medium"> View All</span>
-    </a>
-      <h6 class="text-3xl font-bold sm:text-2xl">Feeds</h6>
-      <p class="mt-4 text-gray-600"></p><br>
+    </a> 
+     
         
     </div>
 

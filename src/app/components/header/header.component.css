@@ -2,3 +2,9 @@
     color: black;
     font-weight: bold;
   }
+  #navMenu {
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    background: #fff;
+  }

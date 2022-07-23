@@ -6,7 +6,7 @@
 
   plugins: [require('@tailwindcss/forms')]
 -->
-
+<!-- 
 <header class="bg-gray-100">
     <div class="flex items-center justify-between h-16 max-w-screen-xl px-4 mx-auto">
   
@@ -14,16 +14,138 @@
             <a class="text-lg font-medium text-gray-900 px-4 active" href="/">Actuals</a>
         </div>
       <nav class="items-left justify-left hidden space-x-8 text-sm font-medium lg:flex lg:flex-1 lg:w-0">
-        <!-- <a id="tracker" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isTrackerActive}" routerLink="/tracker" routerLinkActive="active">Tracker</a> -->
+          <a id="tracker" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isTrackerActive}" routerLink="/tracker" routerLinkActive="active">Tracker</a>
         <a id="feeds" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isFeedsActive}" routerLink="/feeds" routerLinkActive="active">Feeds</a>
         <a id="projects" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isProjectsActive}" routerLink="/projects" routerLinkActive="active">Directory</a>
-        <!-- <a id="reports" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isReportsActive}"routerLink="/home">Reports</a> -->
+         <a id="reports" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isReportsActive}"routerLink="/home">Reports</a>
         <a id="about" class="px-3 text-gray-600 hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isAboutActive}" routerLink="/about" routerLinkActive="active">About</a>
       </nav>
   
-      <div class="items-center hidden space-x-4 lg:flex">
+       <div class="items-center hidden space-x-4 lg:flex">
         <a class="px-6 py-2 font-medium text-gray-900" routerLink="/signup">Sign up</a>
         <a class="px-6 py-2 font-medium text-gray-900 bg-gray-100 rounded-lg border border-gray-900" routerLink="/signin">Sign in</a>
       </div>
     </div>
+  </header> -->
+
+  <header class="bg-gray-100">
+    <div  class="flex items-center h-16 max-w-screen-xl gap-8 px-4 mx-auto sm:px-6 lg:px-8" >  
+              <a class="text-lg font-medium text-gray-900 px-4 active" href="/">Actuals</a> 
+       
+  
+      <div class="flex items-center justify-end flex-1 md:justify-between">
+        <nav  class="hidden md:block" aria-labelledby="header-navigation">
+          <h2 class="sr-only" id="header-navigation">Header navigation</h2>
+  
+          <ul class="flex items-center gap-6 text-sm">
+            <li>
+                <!-- <a id="tracker" class="px-3 text-gray-600 transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isTrackerActive}" routerLink="/tracker" routerLinkActive="active">Tracker</a> -->
+      
+              
+            </li>
+  
+            <li>
+              <a id="feeds" class="px-3 text-gray-600  transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isFeedsActive}" routerLink="/feeds" routerLinkActive="active">Feeds</a>
+             
+             
+            </li>
+  
+            <li>
+              <a id="projects"   class="text-gray-600 transition hover:bg-transparent hover:text-indigo-600" class="px-3 text-gray-600 " [ngClass]="{'active':isProjectsActive}" routerLink="/projects" routerLinkActive="active">Directory</a>
+              
+            
+            </li>
+  
+            <li>
+              <!-- <a id="reports" class="text-gray-600 transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isReportsActive}"routerLink="/home">Reports</a> -->
+              
+           
+            </li>
+  
+            <li>
+              <a id="about"   class="text-gray-600 transition hover:bg-transparent hover:text-indigo-600"  [ngClass]="{'active':isAboutActive}" routerLink="/about" routerLinkActive="active">About</a>
+              
+            </li>
+  
+          
+          </ul>
+        </nav>
+  
+        <div class="flex items-center gap-4">
+          <div class="sm:gap-4 sm:flex">
+            <a
+              class="px-6 py-2 font-medium text-gray-900 block px-5 py-2.5 text-sm font-medium text-white bg-teal-600 hover:bg-teal-700 transition rounded-md"
+              routerLink="/signup" >
+            Sign up
+            </a>
+  
+            <a
+              class="px-6 py-2 font-medium text-gray-900 bg-gray-100 rounded-lg border border-gray-900 hidden sm:block px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md hover:text-teal-600/75 transition"
+              routerLink="/signin"
+            >
+            Sign in
+            </a>
+
+          
+          </div>
+  
+          <button (click)="mobMenuClick()"
+            class="block p-2.5 text-gray-600 transition bg-gray-100 rounded md:hidden hover:text-gray-600/75"
+          >
+            <span class="sr-only">Toggle menu</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <nav id="navMenu" *ngIf="showToggle"  aria-labelledby="header-navigation">
+            <h2 class="sr-only" id="header-navigation">Header navigation</h2>
+    
+            <ul class="flex  flex-col items-center gap-4 text-sm">
+              <li>
+                  <!-- <a id="tracker" class="block  px-3 text-gray-600 transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isTrackerActive}" routerLink="/tracker" routerLinkActive="active">Tracker</a> -->
+         </li>
+    
+              <li>
+                <a id="feeds" class=" block  px-3 text-gray-600  transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isFeedsActive}" routerLink="/feeds" routerLinkActive="active">Feeds</a>
+               
+               
+              </li>
+    
+              <li>
+                <a id="projects"   class="block  text-gray-600 transition hover:bg-transparent hover:text-indigo-600" class="px-3 text-gray-600 " [ngClass]="{'active':isProjectsActive}" routerLink="/projects" routerLinkActive="active">Directory</a>
+                
+              
+              </li>
+    
+              <li>
+                <!-- <a id="reports" class=" block  text-gray-600 transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isReportsActive}"routerLink="/home">Reports</a> -->
+                
+             
+              </li>
+    
+              <li>
+                <a id="about"   class="block  text-gray-600 transition hover:bg-transparent hover:text-indigo-600"  [ngClass]="{'active':isAboutActive}" routerLink="/about" routerLinkActive="active">About</a>
+                
+              </li>
+    
+            
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </div>
   </header>
+  

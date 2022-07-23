@@ -9,7 +9,17 @@
 
   plugins: [require('@tailwindcss/forms')]
 -->
-
+<div class=" bg-gray-100 rounded-lg lg:col-span-3">
+  <div class="mx-auto flex  directory-sec text-left lg:text-left py-6 ">
+  
+    <h6 class="text-3xl font-bold sm:text-2xl ">Directory</h6>
+    <a *ngIf="viewAllButton"
+    class="items-center px-8 py-3 text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
+    (click)="navTo('/projects')">
+    <span class="text-sm font-medium">View All</span>
+  </a>
+ </div>
+      </div>
 
     <div class="mx-auto text-left lg:text-left lg:mx-0">
       <!-- <div *ngIf="showAllprojects" class="relative py-2">
@@ -39,7 +49,7 @@
                              Icon placeholder
                             </div>-->
             </div>
-            <div class="text-gray-500">
+            <div class="text-gray-500 card-sec">
               <p class="hidden py-2 text-sm sm:block overflow">
                 {{proj.Description || proj.Name+' aims to be the go-to digital asset prime brokerage for high net worth and institutional investors, providing a single point of access to digital asset trading, derivatives, borrowing, lending, custody and prime brokerage services.'}}
               </p>
@@ -76,10 +86,6 @@
       </div>
 
     </div>
-    <a *ngIf="viewAllButton"
-      class="inline-flex items-center px-8 py-3 mt-8 text-white bg-blue-600 border border-blue-600 rounded hover:bg-transparent hover:text-indigo-600 active:text-indigo-500 focus:outline-none focus:ring"
-      (click)="navTo('/projects')">
-      <span class="text-sm font-medium">View All</span>
-    </a>
+  
   </div>
 </section>

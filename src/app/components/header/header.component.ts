@@ -12,7 +12,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   isFeedsActive : boolean = false;
   isProjectsActive : boolean = false;
   isReportsActive : boolean = false;
-  isAboutActive : boolean = false;
+  isAboutActive : boolean = false; 
+ showToggle :boolean = false; 
   constructor(private router:Router) { 
   }
 
@@ -42,4 +43,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
       }
     });
 }
+
+mobMenuClick(){
+  this.showToggle = !this.showToggle; 
+}
+
 }

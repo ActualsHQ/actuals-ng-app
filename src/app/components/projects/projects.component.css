@@ -1,8 +1,17 @@
 .overflow {
     overflow: hidden;
-    height: 100px;
+    height: 90px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;   
+    margin-bottom: 10px;
 }
 
+.card-sec span{
+    margin-bottom: 10px;
+    display: inline-block;
+}
 .noData {
     color: #9299AA;
     width: 70px;
@@ -22,3 +31,8 @@
     transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
     font-size: 1.5rem;
 }
+
+
+.directory-sec{justify-content: space-between; }
+
+.directory-sec h6{ line-height: inherit;}
