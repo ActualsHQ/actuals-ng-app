@@ -20,53 +20,31 @@
             </div>
             <ul class="flex py-6">
                 <li class="mr-8">
-                  <a class="relative block py-4" (click)="activate('summary')">
-              
-                    <div class="flex items-center justify-left">
-                      
-              
-                      <span class="ml-3 text-md text-gray-900 hover:font-extrabold"> Summary </span>
-                    </div>
+                  <a class="relative block py-4" [ngClass]="{'active':summary}" (click)="activate('summary')">Summary
                   </a>
                 </li>
               
                 <li class="mr-8">
-                  <a class="relative block py-4"  (click)="activate('profile')">
+                  <a class="relative block py-4"  [ngClass]="{'active':profile}" (click)="activate('profile')">
                     
-                    <div class="flex items-center justify-left">
-                      
-              
-                      <span class="ml-3 text-md text-gray-900"> Profile </span>
-                    </div>
+                    <span class="ml-3 text-md text-gray-900"> Profile </span>
                   </a>
                 </li>
               
                 <li class="mr-8">
-                  <a class="relative block py-4" (click)="activate('updates')">
-                    <div class="flex items-center justify-left">
-                   
-              
-                      <span class="ml-3 text-md text-gray-900"> Updates </span>
-                    </div>
+                  <a class="relative block py-4" [ngClass]="{'active':updates}" (click)="activate('updates')">
+                    <span class="ml-3 text-md text-gray-900"> Updates </span>
                   </a>
                 </li>
               
                 <li class="mr-8">
-                  <a class="relative block py-4" (click)="activate('metrics')">
-                    <div class="flex items-center justify-left">
-                      
-              
-                      <span class="ml-3 text-md text-gray-900"> Metrics </span>
-                    </div>
+                  <a class="relative block py-4" [ngClass]="{'active':metrics}" (click)="activate('metrics')">
+                    <span class="ml-3 text-md text-gray-900"> Metrics </span>
                   </a>
                 </li>
                 <li class="mr-8">
-                    <a class="relative block py-4" (click)="activate('news')">
-                      <div class="flex items-center justify-left">
-                        
-                
+                    <a class="relative block py-4" [ngClass]="{'active':news}" (click)="activate('news')">
                         <span class="ml-3 text-md text-gray-900"> News </span>
-                      </div>
                     </a>
                   </li>
               </ul>
