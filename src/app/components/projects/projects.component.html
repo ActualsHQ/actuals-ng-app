@@ -36,7 +36,7 @@
         [ngClass]="{'lg:grid-cols-5':!showAllprojects, 'lg:grid-cols-4':showAllprojects}">
 
         <li *ngFor="let proj of projects">
-          <a class="block p-2 border border-gray-100 bg-white rounded-lg hover:border-gray-600" href="/projects">
+          <a class="block p-2 border border-gray-100 bg-white rounded-lg hover:border-gray-600" (click)="navTo('/projectDetails')">
 
             <div class="justify-between sm:flex">
               <div>
