@@ -5,6 +5,7 @@ import { FeedsComponent } from './components/feeds/feeds.component';
 import { HomeComponent } from './components/home/home.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { LoginComponent } from './components/login/login.component';
+import { ProjectDetailsComponent } from './components/project-details/project-details.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { TrackerComponent } from './components/tracker/tracker.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'home',      component: HomeComponent },
   { path: 'feeds',      component: FeedsComponent },
   { path: 'projects',      component: LayoutComponent },
+  { path: 'projectDetails',      component: ProjectDetailsComponent },
   { path: 'tracker',      component: TrackerComponent },
   { path: 'about',      component: AboutComponent },
   { path: 'signin',      component: LoginComponent },
