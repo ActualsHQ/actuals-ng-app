@@ -112,7 +112,7 @@
           <nav id="navMenu" *ngIf="showToggle"  aria-labelledby="header-navigation">
             <h2 class="sr-only" id="header-navigation">Header navigation</h2>
     
-            <ul class="flex  flex-col items-center gap-4 text-sm">
+            <ul class="flex  flex-col items-start gap-4 text-sm">
               <li>
                   <!-- <a id="tracker" class="block  px-3 text-gray-600 transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isTrackerActive}" routerLink="/tracker" routerLinkActive="active">Tracker</a> -->
          </li>
@@ -129,14 +129,14 @@
               
               </li>
     
-              <li>
-                <!-- <a id="reports" class=" block  text-gray-600 transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isReportsActive}"routerLink="/home">Reports</a> -->
+               <!-- <li>
+               <a id="reports" class=" block  text-gray-600 transition hover:bg-transparent hover:text-indigo-600" [ngClass]="{'active':isReportsActive}"routerLink="/home">Reports</a> 
                 
              
-              </li>
+              </li> -->
     
               <li>
-                <a id="about"   class="block  text-gray-600 transition hover:bg-transparent hover:text-indigo-600"  [ngClass]="{'active':isAboutActive}" routerLink="/about" routerLinkActive="active">About</a>
+                <a id="about"   class="block   px-3 pb-3  text-gray-600 transition hover:bg-transparent hover:text-indigo-600"  [ngClass]="{'active':isAboutActive}" routerLink="/about" routerLinkActive="active">About</a>
                 
               </li>
     
